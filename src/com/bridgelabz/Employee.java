@@ -8,20 +8,19 @@ public class Employee{
 		int Wages_Per_Hour=20;
 		int full_Day_Hour=8;
 		int Part_Day_Hour=4;
+		int month_days=20;
 		int empcheckout=(int) (Math.floor(Math.random() *10) %3);
 		System.out.println("The Result is :"+empcheckout);
 		switch(empcheckout){
-		    case 0 : System.out.println("Employee is Absent");
-                        break;
-			case 1 :int total_Wages=Wages_Per_Hour * full_Day_Hour;
-						System.out.println("Wages for Full Time is :"+total_Wages);
-						break;
+		    case 0 :System.out.println("Employee is Absent");
+		                   break;
+			case 1 :int total=Wages_Per_Hour * full_Day_Hour;
+								System.out.println("Wage for Full Time is :"+total * month_days);
+								break;
 			case 2 :int total_part_time=Wages_Per_Hour * Part_Day_Hour;
-						System.out.println("Wages for Part Time Is :"+total_part_time);
-						break;
+								System.out.println("Wage for Part Time is :"+total_part_time * month_days);
+								break;
 			default : System.out.println("Wrong Entry");
-		                break;
 		}
-		
-    }
+	}
 }
