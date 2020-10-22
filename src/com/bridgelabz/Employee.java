@@ -35,7 +35,7 @@ public class Employee{
 		System.out.println("Total Salary is : " + totalSalary);
 	}
 public static void main(String[] args) {
-	 Employee employee= new Employee();
-     employee.empWageForMonth();
+	 Employee emp= new Employee();
+     emp.empWageForMonth();
   }
 }
