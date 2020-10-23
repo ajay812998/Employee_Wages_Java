@@ -23,9 +23,9 @@ public class Employee{
 			int check=(int) (Math.floor(Math.random()*10)%3);
 			switch(check) {
 			 case IS_FULL_TIME : empHours=8;
-			 					 break;
+			 		     break;
 			 case IS_PART_TIME : empHours=4;
-			 					 break;
+			 		     break;
 			 default : empHours=0;
 			}
 			totalEmpHours+=empHours;
