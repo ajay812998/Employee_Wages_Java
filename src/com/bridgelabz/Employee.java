@@ -2,54 +2,27 @@ package com.bridgelabz;
 
 public class Employee{
 
-	public static final int IS_FULL_TIME=1;
-	public static final int IS_PART_TIME=2;
-	private final String company;
-	private final int RATE_PER_HOUR;
-	private final int workingDays;
-	private final int maxHours;
-	private int totalEmpWages; 
+	public final String company;
+	public final int empRatePerHour;
+	public final int numOfworkingDays;
+	public final int maxHoursPerMonth;
+	public int totalEmpWage;
 	
-	public Employee(String company,int RATE_PER_HOUR,int workingDays,int maxHours) {
+	public Employee(String company,int empRatePerHour,int numOfworkingDays,int maxHoursPerMonth) {
 		this.company=company;
-		this.RATE_PER_HOUR=RATE_PER_HOUR;
-		this.workingDays=workingDays;
-		this.maxHours=maxHours;
-		}
-	public void Calculation() {
-		int empHours=0,totalEmpHours=0,totalWorkingDays=0;
+		this.empRatePerHour=empRatePerHour;
+		this.numOfworkingDays=numOfworkingDays;
+		this.maxHoursPerMonth=maxHoursPerMonth;
+	}
+	public void setTotalEmpWage(int totalEmpWage)
+	{
 		
-		while(totalEmpHours<=maxHours && totalWorkingDays<workingDays) {
-			totalWorkingDays++;
-			int check=(int) (Math.floor(Math.random()*10)%3);
-			switch(check) {
-			 case IS_FULL_TIME :
-				 empHours=8;
-			 	 break;
-			 case IS_PART_TIME : 
-				 empHours=4;
-			 	 break;
-			 default :
-				 empHours=0;
-			}
-			totalEmpHours+=empHours;
-			//System.out.println("Day :"+totalWorkingDays+"Emp Hours :"+empHours);
-			
-		}
-		//System.out.println("Total Employee work Hours :"+totalEmpHours);
-		totalEmpWages=totalEmpHours*RATE_PER_HOUR;
+		this.totalEmpWage =totalEmpWage;
 	}
 	
 	@Override
-	public String toString() {
-		return "Total Emp Wage for Company :"+company+"is:"+totalEmpWages;
+	public String toString()
+	{
+			return "Total Emp Wage for Company :" + company +" is :" + totalEmpWage;
 	}
-	public static void main(String[] args) {
-		Employee Idea=new Employee("Idea",20,15,125);
-		Employee Airtel=new Employee("Airtel",30,10,150);
-		Idea.Calculation();
-		System.out.println(Idea);
-		Airtel.Calculation();
-		System.out.println(Airtel);
-	 }
 }
